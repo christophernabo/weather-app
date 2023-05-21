@@ -13,9 +13,10 @@ const Search = () => {
     const [searchInputValue, setSearchInputValue] = useState("");
     const [weather, setWeather] = useState(null);
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
     const sunriseTimestamp = weather?.sys?.sunrise;
     const sunsetTimestamp = weather?.sys?.sunset;
-    const humidity = weather?.main.humidity;
+    const humidity = weather?.main?.humidity;
 
     const quickLinks = [
         { label: 'Manila', location: 'Manila' },
@@ -119,11 +120,8 @@ const Search = () => {
                             }}
                             type='submit'>Search</button>
                     </form>
-                    <div style={{ fontStyle: 'italic', fontSize: '12px', marginTop: '-15px', textAlign: 'center' }}>NOTE: Time and date are based on Philippine Date and Time (PHT). If a city does not appear, try adding "City" to its name. Municipality names are as is. If a city or municipality does not appear, its data is probably not available. </div>
+                    <div style={{ fontStyle: 'italic', fontSize: '12px', marginTop: '-15px', textAlign: 'center' }}>NOTE: Time and date are based on Philippine Date and Time (PHT). If a city does not appear, try adding "City" after its name. Municipality names are as is. If a city or municipality does not appear, its data is probably not available. </div>
                 </div>
-
-
-
 
                 <div style={{
                     minHeight: '350px', textAlign: 'center', padding: '20px', minWidth: '50vw', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', border: '1px solid #000000', borderRadius: '10px', padding: '10px', marginBottom: '0px'
@@ -133,7 +131,6 @@ const Search = () => {
                         <>
                             <div>{currentDateTime.toLocaleTimeString()} • {currentDateTime.toLocaleString('en-US', { weekday: 'long' })}, {formatDate(currentDateTime)}</div>
                             <div style={{ display: 'flex', alignItems: 'center', marginTop: '50px' }}>
-                                {/* <ThermostatIcon style={{ marginRight: '5px', fontSize: '55px' }} /> */}
                                 <span style={{ fontSize: '42px', fontWeight: 'bold', marginTop: '-5px' }}>{renderWeatherDetail(weather.main?.temp)}°C</span>
                             </div>
                             <div style={{ marginBottom: '50px' }}>With {weather.weather?.[0]?.description}</div>
@@ -151,19 +148,15 @@ const Search = () => {
                                     {humidity !== undefined ? `${humidity}%` : 'N/A'}
                                 </div>
                             </div>
-
                         </>
                     ) : (
                         <p>No weather information available.</p>
                     )}
                 </div>
-
-
-
             </div>
 
             <div style={{
-                listStyleType: 'disc', paddingLeft: '20px', textAlign: 'center', marginBottom: '20px', width: '80vw', justifyContent: 'space-between'
+                listStyleType: 'disc', textAlign: 'center', marginBottom: '20px', width: '80vw'
             }}>
                 {quickLinks.map((link) => (
                     <button
@@ -174,15 +167,14 @@ const Search = () => {
                             textDecoration: 'underline',
                             marginBottom: '10px',
                             background: 'none',
-                            textAlign: 'left'
+                            textAlign: 'center'
                         }}
                     >
                         {link.label}
                     </button>
-                ))
-                }
-            </div >
-        </div >
+                ))}
+            </div>
+        </div>
 
     );
 };
