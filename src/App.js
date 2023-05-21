@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Pages/Header';
 import Search from './components/Pages/Search';
 import Footer from './components/Pages/Footer';
+import { backdropClasses } from '@mui/material';
 
 function App() {
   return (
@@ -16,7 +17,6 @@ function App() {
       <Search />
       <Footer />
     </div >
-
   );
 }
 

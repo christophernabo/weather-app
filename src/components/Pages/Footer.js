@@ -4,11 +4,16 @@ const Footer = () => {
     return (
         <div
             style={{
-                position: "relative",
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                borderRadius: '10px',
+                backgroundColor: '#FFF44F',
+                minWidth: '80vw',
+                height: '50px',
+                marginBottom: '10px',
+                padding: '10px 0px 10px 0px',
             }}>
 
             <div><a href="https://www.linkedin.com/in/christopher-nabo-004149220/"
