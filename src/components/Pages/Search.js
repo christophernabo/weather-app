@@ -110,7 +110,7 @@ const Search = () => {
                                 maxWidth: '250px'
                             }}
                             type='text'
-                            placeholder='Enter city or town...'
+                            placeholder='Enter city/town/barangay'
                             value={searchInputValue}
                             onChange={(e) => setSearchInputValue(e.target.value)}
                         />
@@ -120,7 +120,7 @@ const Search = () => {
                             }}
                             type='submit'>Search</button>
                     </form>
-                    <div style={{ fontStyle: 'italic', fontSize: '12px', marginTop: '-15px', textAlign: 'center' }}>NOTE: Time and date are based on Philippine Date and Time (PHT). If a city does not appear, try adding "City" after its name. Municipality names are as is. If a city or municipality does not appear, its data is probably not available. </div>
+                    <div style={{ fontStyle: 'italic', fontSize: '12px', marginTop: '-15px', textAlign: 'center' }}>NOTE: Time and date are based on Philippine Date and Time (PHT). If a city does not appear, try adding "City" after its name. Town/barangay names are as is. If a city/town/barangay does not appear, its data is probably not available. </div>
                 </div>
 
                 <div style={{
